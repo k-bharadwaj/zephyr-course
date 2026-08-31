@@ -34,7 +34,7 @@ if LED_SUBSYSTEM
                 default 100
                 range 0 100
                 help
-                    Set the brightness of the LED in percent\
+                    Set the brightness of the LED in percent
             
             config LED_FADE_DURATION
                 int "LED fade duration (ms)"
@@ -61,5 +61,12 @@ config BLINK_SLEEP_TIME_MS
     default 250 if BLINK_SLEEP_250MS
     default 1000 if BLINK_SLEEP_1000MS
     default 2000 if BLINK_SLEEP_2000MS
+
+config APP_HEARTBEAT_PERIOD_MS
+    int "App Heartbeat (ms)"
+    default 500
+    range 100 2000
+    help
+        Set the application Heartbeat in ms.
 
 source "Kconfig.zephyr"
